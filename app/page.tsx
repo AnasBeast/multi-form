@@ -1,27 +1,28 @@
-import Image from "next/image";
+'use client'
+import { useEffect, useState } from "react";
 import Info from "./components/Info";
+import { useStep } from "./context/StepContext";
+import Plan from "./components/Plan";
 
 export default function Home() {
-  const steps =[
-    {
-      title:"Your Info",
-      selected:true
-    },
-    {
-      title:"Select Plan",
-      selected:false
-    },
-    {
-      title:"Add-Ons",
-      selected:false
-    },
-    {
-      title:"Summary",
-      selected:false
-    }];
+  const {step} = useStep();
+  const [steps, setSteps] = useState([
+    { title: "Your Info", selected: false },
+    { title: "Select Plan", selected: false },
+    { title: "Add-Ons", selected: false },
+    { title: "Summary", selected: false },
+  ]);
+
+  useEffect(() => {
+    const updatedSteps = steps.map((sp, index) => ({
+      ...sp,
+      selected: index === step,
+    }));
+    setSteps(updatedSteps);
+  }, [step]);
   return (
   <div className="w-screen h-screen flex items-center justify-center">
-    <div className="max-w-7xl bg-white p-4 rounded-md flex gap-20">
+    <div className="w-[1000px] h-[600px] bg-white p-4 rounded-md flex gap-20">
       <div className="object-contain">
         <div className="absolute flex flex-col gap-6 p-8 w-[274px]">
           {steps.map((step,index)=>(
@@ -40,8 +41,9 @@ export default function Home() {
 
         <img src="./images/bg-sidebar-desktop.svg" alt="side" />
       </div>
-      <div>
+      <div className="w-[600px]">
         <Info/>
+        <Plan/>
       </div>
     </div>
   </div>     

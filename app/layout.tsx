@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { StepProvider } from "./context/StepContext";
 
 
 export const metadata: Metadata = {
@@ -18,7 +18,9 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        {children}
+        <StepProvider>
+          {children}
+        </StepProvider>
       </body>
     </html>
   );
