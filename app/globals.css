@@ -43,3 +43,14 @@ body {
   background: var(--lightgray);
   font-family: "Ubuntu",Arial, Helvetica, sans-serif;
 }
+
+
+.custom-checkbox:checked + .custom-label::before {
+  content: '✔';
+  display: block;
+  text-align: center;
+  font-size: 1.25rem;
+  color: white;
+  border-radius: 0.4rem;
+  background-color: var(--purplishblue); /* Tailwind's blue-600 */
+}

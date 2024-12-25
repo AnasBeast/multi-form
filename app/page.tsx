@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Info from "./components/Info";
 import { useStep } from "./context/StepContext";
 import Plan from "./components/Plan";
+import AddOns from "./components/AddOns";
+import Summary from "./components/Summary";
 
 export default function Home() {
   const {step} = useStep();
@@ -44,6 +46,8 @@ export default function Home() {
       <div className="w-[600px]">
         <Info/>
         <Plan/>
+        <AddOns/>
+        <Summary/>
       </div>
     </div>
   </div>     

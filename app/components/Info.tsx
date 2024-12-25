@@ -6,7 +6,7 @@ import { useStep } from "../context/StepContext";
 
 const Info = () => {
   const req = useRef<(HTMLHeadingElement | null)[]>([]);
-  const {step,addStep} = useStep();
+  const {step, addStep} = useStep();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
