@@ -22,10 +22,11 @@ const Summary = () => {
   return (
     <>
       {!show && (
-        <div
-          className={`py-12 space-y-8 ${
-            step === 3 ? "block animate-fade-in" : "hidden"
-          } transition-all duration-200 ease-out`}
+        <div className={`${
+          step === 3 ? "block animate-fade-in" : "hidden"
+        } transition-all duration-200 ease-out `}>
+          <div
+          className={`md:py-12 space-y-4 md:space-y-8 md:px-0 md:top-0 relative -top-16 bg-white w-11/12 md:w-auto px-6 rounded-lg md:rounded-none py-8 mx-auto shadow-lg md:shadow-none`}
         >
           <div>
             <h1 className="text-3xl text-marineblue font-bold">Finishing up</h1>
@@ -35,7 +36,7 @@ const Summary = () => {
           </div>
 
           <div className="flex flex-col">
-            <div className="flex flex-col p-8 bg-magnolia rounded-sm gap-8 w-full">
+            <div className="flex flex-col p-4 md:p-8 bg-magnolia rounded-sm gap-4 md:gap-8 w-full">
               <div className="flex justify-between items-center border-b-2 pb-4">
                 <div>
                   <h3 className="text-marineblue font-bold">
@@ -60,7 +61,7 @@ const Summary = () => {
               </div>
             </div>
 
-            <div className="w-full flex items-center justify-between p-8">
+            <div className="w-full flex items-center justify-between p-4 pt-8 md:p-8">
               <h3>Total ({plan.type})</h3>
               <h1 className="text-purplishblue text-xl font-bold">
                 +${sum}/{plan.type == "monthly" ? "mo" : "yr"}
@@ -68,20 +69,22 @@ const Summary = () => {
             </div>
           </div>
 
-          <div className="w-full flex justify-between ">
-            <button
-              onClick={() => goback()}
-              className="text-coolgray py-3 px-6 rounded-lg hover:text-marineblue"
-            >
-              Go Back
-            </button>
-            <button
-              className="bg-purplishblue text-white py-3 px-6 rounded-lg hover:shadow-xl transition duration-300 ease-out"
-              onClick={() => nextStep()}
-            >
-              Confirm
-            </button>
-          </div>
+          
+        </div>
+        <div className="w-full p-4 absolute md:relative bg-white md:bg-none bottom-0 md:bottom-auto flex justify-between ">
+        <button
+          onClick={() => goback()}
+          className="text-coolgray py-3 px-6 hover:text-marineblue"
+        >
+          Go Back
+        </button>
+        <button
+          className="bg-purplishblue text-white py-3 px-6 rounded-md hover:shadow-xl transition duration-300 ease-out"
+          onClick={() => nextStep()}
+        >
+          Confirm
+        </button>
+      </div>
         </div>
       )}
       {show && <Confirmation />}
