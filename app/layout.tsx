@@ -6,6 +6,7 @@ import { StepProvider } from "./context/StepContext";
 export const metadata: Metadata = {
   title: "Multi Step Form",
   description: "Challenge made by Frontendmentor.io",
+  
 };
 
 export default function RootLayout({
@@ -15,6 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon" />
+      </head>
       <body
         className={`antialiased`}
       >

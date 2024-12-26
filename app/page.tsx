@@ -23,27 +23,30 @@ export default function Home() {
     setSteps(updatedSteps);
   }, [step]);
   return (
-  <div className="w-screen h-screen flex items-center justify-center">
-    <div className="w-[1000px] h-[600px] bg-white p-4 rounded-md flex gap-20">
+  <div className="w-screen h-screen md:flex items-center justify-center">
+    <div className="md:w-[1000px] md:h-[600px] bg-white md:p-4 rounded-md flex md:flex-row flex-col gap-20">
       <div className="object-contain">
-        <div className="absolute flex flex-col gap-6 p-8 w-[274px]">
+        <div className="absolute z-10 flex md:flex-col gap-6 p-8 justify-center md:justify-normal w-full md:w-[274px]">
           {steps.map((step,index)=>(
             <div key={index} className="flex gap-4 items-center">
-              <div className={`flex items-center justify-center border-2 ${step.selected?"bg-magnolia text-marineblue":"text-white"} rounded-full w-12 h-12`}>
+              <div className={`flex items-center justify-center border-2 ${step.selected?"bg-lightblue text-marineblue":"text-white"} rounded-full w-12 h-12`}>
                 <span className="text-center">{index+1}</span>
               </div>
-              <div className="flex flex-col uppercase">
+              <div className="hidden md:flex flex-col uppercase">
                 <h2 className="text-coolgray font-normal text-sm">Step {index+1}</h2>
                 <h1 className="text-white font-bold">{step.title}</h1>
               </div>
             </div>
+            
           ))}
         </div>
 
-
-        <img src="./images/bg-sidebar-desktop.svg" alt="side" />
+        <div className="relative h-52 md:h-auto overflow-hidden">
+          <img src="./images/bg-sidebar-desktop.svg" className="relative -top-[475px] md:top-0 w-full" alt="side" />
+          
+        </div>
       </div>
-      <div className="w-[600px]">
+      <div className="md:w-[600px]">
         <Info/>
         <Plan/>
         <AddOns/>
