@@ -24,7 +24,7 @@ export default function Home() {
   }, [step]);
   return (
   <div className="w-screen h-screen md:flex items-center justify-center">
-    <div className="md:w-[1000px] md:h-[600px] bg-white md:p-4 rounded-md flex md:flex-row flex-col gap-20">
+    <div className="md:w-[1000px] md:h-[600px] bg-white md:p-4 rounded-md flex md:flex-row flex-col md:gap-20">
       <div className="object-contain">
         <div className="absolute z-10 flex md:flex-col gap-6 p-8 justify-center md:justify-normal w-full md:w-[274px]">
           {steps.map((step,index)=>(
@@ -42,11 +42,11 @@ export default function Home() {
         </div>
 
         <div className="relative h-52 md:h-auto overflow-hidden">
-          <img src="./images/bg-sidebar-desktop.svg" className="relative -top-[475px] md:top-0 w-full" alt="side" />
+          <img src="./images/bg-sidebar-desktop.svg" className="relative -top-[475px] md:top-0 w-full object-cover" alt="side" />
           
         </div>
       </div>
-      <div className="md:w-[600px]">
+      <div className="md:w-[600px] bg-magnolia md:bg-none">
         <Info/>
         <Plan/>
         <AddOns/>
