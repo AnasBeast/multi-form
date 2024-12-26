@@ -95,7 +95,7 @@ const Plan = () => {
                 <h3 className={`${isOn?"text-marineblue":"text-coolgray"}`}>Yearly</h3>
             </div>
         </div>
-        <div className="w-full p-4 absolute md:relative bg-white md:bg-none bottom-0 md:bottom-auto flex justify-between ">
+        <div className="w-full p-4 absolute md:relative bg-white md:bg-none mt-auto flex justify-between ">
             <button
             onClick={() => goback()}
             className="text-coolgray py-3 px-6 hover:text-marineblue"
