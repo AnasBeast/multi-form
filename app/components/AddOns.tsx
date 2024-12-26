@@ -50,7 +50,7 @@ const AddOns = () => {
     return (
       <div
         className={`py-12 space-y-8 ${
-          step === 2 ? "block" : "hidden"
+          step === 2 ? "block animate-fade-in" : "hidden"
         } transition-all duration-200 ease-out`}
       >
         <div>

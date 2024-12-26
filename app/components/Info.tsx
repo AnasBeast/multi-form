@@ -74,7 +74,7 @@ const Info = () => {
 
   });
   return (
-    <div className={`py-12 space-y-8 ${step===0?"block":"hidden"} transition-all duration-200 ease-out`}>
+    <div className={`py-12 space-y-8 ${step===0?"block animate-fade-in":"hidden"} transition-all duration-200 ease-out`}>
       <div>
         <h1 className="text-3xl text-marineblue font-bold">Personal Info</h1>
         <h2 className="text-coolgray">Please provide your name, email address, and phone number.</h2>

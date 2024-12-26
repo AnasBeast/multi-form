@@ -23,6 +23,15 @@ export default {
       },
       backgroundImage:{
         'side': "url('/images/bg-sidebar-desktop.svg')",
+      },
+      animation:{
+        'fade-in': 'fadeIn 1s ease-in-out'
+      },
+      keyframes:{
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       }
     },
   },

@@ -52,7 +52,7 @@ const Plan = () => {
         } else setRequired(true);
     }
     return (
-        <div className={`py-12 space-y-8 ${step===1?"block":"hidden"} transition-all duration-200 ease-out`}>
+        <div className={`py-12 space-y-8 ${step===1?"block animate-fade-in":"hidden"} transition-all duration-200 ease-out`}>
             <div>
                 <h1 className="text-3xl text-marineblue font-bold">Select your plan</h1>
                 <h2 className='text-coolgray'>You have the option of monthly or yearly billing.</h2>
