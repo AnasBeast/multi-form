@@ -74,7 +74,8 @@ const Info = () => {
 
   });
   return (
-    <div className={`md:py-12 space-y-8 ${step===0?"block animate-fade-in":"hidden"} transition-all duration-200 ease-out md:px-0 md:top-0 relative -top-16 bg-white w-11/12 md:w-auto px-6 rounded-lg md:rounded-none py-8 mx-auto shadow-lg md:shadow-none`}>
+    <div>
+      <div className={`py-12 space-y-4 md:space-y-8 ${step===0?"block animate-fade-in":"hidden"} transition-all duration-200 ease-out md:px-0 md:top-0 relative -top-16 bg-white w-11/12 md:w-auto px-6 rounded-lg md:rounded-none py-8 mx-auto shadow-lg md:shadow-none`}>
       <div>
         <h1 className="text-3xl text-marineblue font-bold">Personal Info</h1>
         <h2 className="text-coolgray">Please provide your name, email address, and phone number.</h2>
@@ -123,12 +124,14 @@ const Info = () => {
           />
         </div>
       </div>
-      <div className="w-full flex justify-end pt-12">
-        <button className="bg-marineblue text-white py-3 px-6 rounded-lg hover:bg-purplishblue hover:shadow-xl transition duration-300 ease-out"
-          onClick={()=>handleSubmit()}>
-          Next Step
-        </button>
-      </div>
+      
+    </div>
+    <div className="w-full flex justify-end p-4 absolute md:relative bg-white md:bg-none bottom-0 md:bottom-auto">
+      <button className="bg-marineblue text-white py-3 px-6 rounded-lg hover:bg-purplishblue hover:shadow-xl transition duration-300 ease-out"
+        onClick={()=>handleSubmit()}>
+        Next Step
+      </button>
+    </div>
     </div>
   );
 };

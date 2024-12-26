@@ -52,30 +52,34 @@ const Plan = () => {
         } else setRequired(true);
     }
     return (
-        <div className={`py-12 space-y-8 ${step===1?"block animate-fade-in":"hidden"} transition-all duration-200 ease-out`}>
+        <div className={`${step===1?"block animate-fade-in":"hidden"} transition-all duration-200 ease-out`}>
+        <div className={`md:py-12 space-y-4 md:space-y-8 md:px-0 md:top-0 relative -top-16 bg-white w-11/12 md:w-auto px-6 rounded-lg md:rounded-none py-8 mx-auto shadow-lg md:shadow-none`}>
             <div>
                 <h1 className="text-3xl text-marineblue font-bold">Select your plan</h1>
                 <h2 className='text-coolgray'>You have the option of monthly or yearly billing.</h2>
             </div>
             <div className='flex flex-col gap-2'>
                 {required && <h2 className='text-strawberryred text-right'>This is required</h2>}
-                <div className='grid grid-cols-3 gap-8 w-full'>
+                <div className='grid grid-rows-3 md:grid-rows-1 md:grid-cols-3 gap-8 w-full'>
                     {plans.map((plan, index) => (
                         <div key={index} onClick={() => handlePlanSelect(index)} // Handle div click
-                        className={`p-6 pr-12 text-left outline rounded-lg transition-all duration-200 ease-out 
-                        ${selectedPlan === index ? 'outline-purplishblue' : 'outline-lightgray'} 
+                        className={`p-3 md:p-6 md:pr-12 flex md:block gap-4 text-left outline rounded-lg transition-all duration-200 ease-out 
+                        ${selectedPlan === index ? 'outline-purplishblue bg-alabaster' : 'outline-lightgray bg-none'} 
                         ${required ? 'outline-strawberryred' : null} 
                         hover:outline-purplishblue focus:outline-purplishblue cursor-pointer`}
                         >
                             <img src={plan.image} alt={plan.name} />
-                            <h3 className='text-marineblue mt-12'>{plan.name}</h3>
-                            <h4 className='text-coolgray'>{plan.price}</h4>
-                            {isOn && <h4 className='text-marineblue'>2 months free</h4>}
+                            <div>
+                                <h3 className='text-marineblue md:mt-12'>{plan.name}</h3>
+                                <h4 className='text-coolgray'>{plan.price}</h4>
+                                {isOn && <h4 className='text-marineblue'>2 months free</h4>}
+
+                            </div>
                         </div>
                     ))}
                 </div>
             </div>
-            <div className='w-full bg-lightgray flex justify-center gap-4 py-3'>
+            <div className='w-full bg-magnolia flex justify-center gap-4 py-3'>
                 <h3 className={`${!isOn?"text-marineblue":"text-coolgray"}`}>Monthly</h3>
                 <div className="flex items-center">
                     
@@ -90,21 +94,21 @@ const Plan = () => {
                 </div>
                 <h3 className={`${isOn?"text-marineblue":"text-coolgray"}`}>Yearly</h3>
             </div>
-            <div className="w-full flex justify-between pt-12">
-                <button 
-                onClick={()=>goback()}
-                className="text-coolgray py-3 px-6 rounded-lg hover:text-marineblue"
-                >
-                    Go Back
-                </button>
-                <button 
-
-                className="bg-marineblue text-white py-3 px-6 rounded-lg hover:bg-purplishblue hover:shadow-xl transition duration-300 ease-out"
-                onClick={()=>nextStep()}
-                >
-                    Next Step
-                </button>
-            </div>
+        </div>
+        <div className="w-full p-4 absolute md:relative bg-white md:bg-none bottom-0 md:bottom-auto flex justify-between ">
+            <button
+            onClick={() => goback()}
+            className="text-coolgray py-3 px-6 hover:text-marineblue"
+            >
+            Go Back
+            </button>
+            <button
+            className="bg-marineblue text-white py-3 px-6 rounded-md hover:bg-purplishblue hover:shadow-xl transition duration-300 ease-out"
+            onClick={() => nextStep()}
+            >
+            Next Step
+            </button>
+        </div>
         </div>
     )
 }

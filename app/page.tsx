@@ -46,7 +46,7 @@ export default function Home() {
           
         </div>
       </div>
-      <div className="md:w-[600px] bg-magnolia md:bg-none">
+      <div className="md:w-[600px] bg-magnolia md:bg-white">
         <Info/>
         <Plan/>
         <AddOns/>
